@@ -59,11 +59,6 @@ Parameters:
     MinLength: 2
     MaxLength: 20
     ConstraintDescription: Must be between 2 to 20 characters
-  SecurityTag:
-    Type: String
-    MinLength: 2
-    MaxLength: 20
-    ConstraintDescription: Must be between 2 to 20 characters
 
 Resources:
   InstanceSecurityGroup:
@@ -78,6 +73,9 @@ Resources:
           Ref: SourceCidrForRDP
       VpcId: 
         Ref: VpcId
+      Tags:
+        - Key: SystemTag
+          Value: !Sub ${SystemTag}
   
   WindowsServer:
     Type: AWS::EC2::Instance
@@ -183,8 +181,6 @@ Resources:
           Value: !Sub ${EnvironmentTag}
         - Key: SystemTag
           Value: !Sub ${SystemTag}
-        - Key: Security
-          Value: !Sub ${SecurityTag}
 
   WindowsServerWaitHandle:
     Type: AWS::CloudFormation::WaitConditionHandle
