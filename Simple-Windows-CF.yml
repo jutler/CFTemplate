@@ -3,7 +3,7 @@ Description: This template will build a Windows Server with specified roles and 
 Parameters:
   VpcId:
     Type: AWS::EC2::VPC::Id
-    Description: VPC which this container will be depolyed to
+    Description: VPC which this container will be depolyed to1
   KeyName:
     Description: Name of an existing EC2 KeyPair
     Type: AWS::EC2::KeyPair::KeyName
