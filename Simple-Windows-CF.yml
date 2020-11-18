@@ -160,6 +160,7 @@ Resources:
         Ref: SubnetId
       KeyName:
         Ref: KeyName
+      EbsOptimized: "true"
       BlockDeviceMappings:
       - DeviceName: "/dev/sda1"
         Ebs:
